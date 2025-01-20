@@ -1,49 +1,51 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Image } from 'react-native';
-import { ActivityIndicator, Button, FlatList, ScrollView, Switch, TextInput, TouchableOpacity } from 'react-native-web';
+import { ActivityIndicator, Button, FlatList, ScrollView, Switch, TextInput, TouchableOpacity } from 'react-native';
+import Tablefun from './RNclasses1/table';
+import Statusbarf from './RNclasses1/statusbar';
+import Paper from './RNclasses2/rnpaper';
 
 export default function App() {
 
-  const data = [1,2,3,4,5,6,7,8]
+  const mydata = [1,2,3,4,5,6,7,8]
 
 
   return (
-    <View style={styles.container2} >
-      <ScrollView>
-
-      <Text>this is first app . yeah it is working</Text>
-        <Image source={{uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdBeCmLbPq3t83GPbJkqHm1_QsFTTqqSUF7A&s"}} Style={{width:300,height:300}} />
-        <Image source={require("./assets/itachi.jpg")} style={{width:200,height:200}} />
-       <StatusBar style="auto" />
+    // <View style={styles.container} >
 
 
 
+    //   <ScrollView>
 
-        {/* 23-12-2024 */}
+    //   <Text>this is first app . yeah it is working</Text>
 
-    {/* <TextInput placeholder='Enter password' secureTextEntry={} /> */}
-    <ScrollView >
-    <TextInput placeholder='Enter name' />
-    <TextInput placeholder='Enter number' keyboardType='numeric' />
-    <TextInput placeholder='Enter password' secureTextEntry={true} />
-    </ScrollView>
+    //     <Image source={{uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdBeCmLbPq3t83GPbJkqHm1_QsFTTqqSUF7A&s"}} 
+    //       style={{width:300,height:300}} />
+        
+    //     <Image source={require("./assets/itachi.jpg")} style={{width:200,height:200}} />
+    //    <StatusBar style="auto" />
 
-      <FlatList 
-        // data = {data} renderItem = {({item}) => <Text>{item}</Text>}
-        data = {data} renderItem = {({item}) => 
-        <View style={styles.sizepenchu} >
-          <Text>{item}</Text>
-        </View>}
-        numColumns={3}
-      />
 
-      <Button title='click' />
-      <TouchableOpacity>
-        <Text > click here </Text>
-      </TouchableOpacity>
-      <Switch value={false} />
-      <Switch value={true} />
-      <ActivityIndicator size={'large'} color='green' />
+
+
+    //     {/* 23-12-2024 */}
+
+    // {/* <TextInput placeholder='Enter password' secureTextEntry={} /> */}
+    // <ScrollView >
+    // <TextInput placeholder='Enter name' />
+    // <TextInput placeholder='Enter number' keyboardType='numeric' />
+    // <TextInput placeholder='Enter password' secureTextEntry={true} />
+    // </ScrollView>
+
+      
+
+    //   <Button title='click' />
+    //   <TouchableOpacity>
+    //     <Text > click here </Text>
+    //   </TouchableOpacity>
+    //   <Switch value={false} />
+    //   <Switch value={true} />
+    //   <ActivityIndicator size={'large'} color='green' />
 
       
 
@@ -54,10 +56,26 @@ export default function App() {
 
 
 
+    // </ScrollView>
 
+    // <FlatList 
+    //     // data = {mydata} renderItem = {({item}) => <Text>{item}</Text>}
+    //     data = {mydata} renderItem = {({item}) => 
+    //     <View style={styles.sizepenchu} >
+    //       <Text>{item}</Text>
+    //     </View>}
+    //     numColumns={3}
+    //   />
 
-    </ScrollView>
-     </View>
+    //  </View>
+
+    <View>
+      {/* <Tablefun /> */}
+      {/* <Statusbarf /> */}
+
+      <Paper />
+
+    </View>
    );
 
 
@@ -65,6 +83,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    width:'100%',
+    height:'100%',
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
