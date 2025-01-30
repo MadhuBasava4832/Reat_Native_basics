@@ -8,7 +8,7 @@ const Statusbarf = () => {
 
     return(
         <>
-           <StatusBar style="light" backgroundColor="grey" hidden={false} /> 
+           <StatusBar style="light" backgroundColor="black" hidden={false} /> 
            <SafeAreaView>
             
             <Homeicon name="home" size={50} color={"red"} />

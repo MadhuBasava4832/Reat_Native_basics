@@ -4,6 +4,13 @@ import { ActivityIndicator, Button, FlatList, ScrollView, Switch, TextInput, Tou
 import Tablefun from './RNclasses1/table';
 import Statusbarf from './RNclasses1/statusbar';
 import Paper from './RNclasses2/rnpaper';
+import Carousel1 from './carousel/carousel';
+import Animation from './RNclasses2/animations';
+import MainScreen from './Navigations/mainScreen';
+import TopTabNav from './Navigations/TopTabNavigations';
+
+
+
 
 export default function App() {
 
@@ -73,7 +80,13 @@ export default function App() {
       {/* <Tablefun /> */}
       {/* <Statusbarf /> */}
 
-      <Paper />
+      {/* <Paper /> */}
+      {/* <Animation /> */}
+      {/* <Carousel1 /> */}
+      {/* <MainScreen /> */}
+
+      <TopTabNav/>
+
 
     </View>
    );

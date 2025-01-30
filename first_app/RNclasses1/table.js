@@ -25,11 +25,13 @@ const Tablefun = () => {
 
                             return(
                                 <>
-                                <Rows data={item}  style={[
+                                <Row data={item} 
+                                key={index} style={[
                                     tablestyles.center,
                                     tablestyles.rowsns,
                                     index %2 == 0 ? tablestyles.even : tablestyles.odd ,
-                                    ]} textStyle={tablestyles.rowsty}  />
+                                    ]} textStyle={tablestyles.rowsty}  
+                                    />
                                 </>
                             )
                         })

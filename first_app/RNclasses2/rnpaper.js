@@ -7,11 +7,12 @@ const Paper = () => {
     const [state1,setstate1] = useState(false)
     const [state2,setstate2] = useState(false)
     const [state3,setstate3] = useState(false)
+    
     return(
         <View style={mypstyles.main1}>
             {/* <Image source={{uri:"https://play-lh.googleusercontent.com/V_kmO4jSeSO4OI4T52MNktfbGn_MF10HkW39SMUJs6W6M9GnlVdQG9rIgc3bZ_KwPnU"}} style={{width:300,height:300}}  /> */}
 
-        {/* <SafeAreaView>
+        <SafeAreaView>
             <Button
                 mode="elevated"
                 icon={'home'}
@@ -59,19 +60,9 @@ const Paper = () => {
             showDivider={false}
             elevation={5}
             />
-
             <Card>
                 <Card.Title title="Title 1" />
-                <Card.Cover source={{uri:""}} />
-                <Card.Content > <Text>anime image</Text> </Card.Content> 
-                <Card.Actions >
-                    <Button>cancel</Button>
-                    <Button>ok</Button>
-                </Card.Actions>
-            </Card>
-            <Card>
-                <Card.Title title="Title 1" />
-                <Card.Cover source={{uri:"https://play-lh.googleusercontent.com/V_kmO4jSeSO4OI4T52MNktfbGn_MF10HkW39SMUJs6W6M9GnlVdQG9rIgc3bZ_KwPnU"}} style={{width:300,height:300}}  /> 
+                <Card.Cover source={{uri:"https://play-lh.googleusercontent.com/V_kmO4jSeSO4OI4T52MNktfbGn_MF10HkW39SMUJs6W6M9GnlVdQG9rIgc3bZ_KwPnU"}} style={{width:'100%',height:'200'}}  /> 
                 <Card.Content > <Text>anime image</Text> </Card.Content> 
                 <Card.Actions >
                     <Button>cancel</Button>
@@ -81,23 +72,23 @@ const Paper = () => {
 
 
 
-        </SafeAreaView> */}
+        </SafeAreaView>
 
-        <SafeAreaView>
+        {/* <SafeAreaView>
             <Switch  
             value={state3}
             onValueChange={() => setstate3(!state3)}
             color="green"
             />
 
-            {/* <TouchableRipple  
+            <TouchableRipple  
             rippleColor={"red"}
             onPress={() => console.log("hey there")}
-            ></TouchableRipple> */}
+            ><Text>click here</Text></TouchableRipple>
 
             
 
-        </SafeAreaView>
+        </SafeAreaView> */}
 
         
         </View>
