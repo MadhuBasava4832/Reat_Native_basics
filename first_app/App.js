@@ -8,6 +8,10 @@ import Carousel1 from './carousel/carousel';
 import Animation from './RNclasses2/animations';
 import MainScreen from './Navigations/mainScreen';
 import TopTabNav from './Navigations/TopTabNavigations';
+import TopbarStackNav from './Navigations/topbar_stacknav';
+import StackTopBar from './Navigations/stack_topbarnav';
+import Bottombar from './Navigations/Bottombar/bottomtab';
+import DrawerNav from './Navigations/drawernav';
 
 
 
@@ -85,8 +89,13 @@ export default function App() {
       {/* <Carousel1 /> */}
       {/* <MainScreen /> */}
 
-      <TopTabNav/>
+      {/* <TopTabNav/> */}
 
+      {/* <TopbarStackNav/> */}
+      {/* <StackTopBar/> */}
+
+      {/* <Bottombar/> */}
+      <DrawerNav/>
 
     </View>
    );

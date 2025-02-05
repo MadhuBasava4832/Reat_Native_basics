@@ -1,21 +1,31 @@
 import React from "react";
-import { View,Text } from "react-native";
+import { View,Text, Dimensions } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "react-native-paper";
+import { createStackNavigator } from "@react-navigation/stack";
 
+import Screen4 from "./screen4";
+import Screen5 from "./screen5";
 
 const Screen1 = () => {
-    const navigation1 = useNavigation();
-    const Fun1 = () =>{
-        navigation1.navigate('Chats')
-    }
+    const {width,height} = Dimensions.get('screen');
+    const Stack = createStackNavigator();
 
     return(
-        <View>
-            <Text  >Screen 3</Text>
-            <Text  >Screen 3</Text>
-            <Text  >Screen 3</Text>
-            <Button mode="contained" onPress={Fun1}>Clict for page 1</Button>
+        <View style={{width:width,height:height}} >
+            <Stack.Navigator
+            // screenOptions={{
+            //     headerShown:false
+            // }}
+            >
+                <Stack.Screen
+                options={{
+                    headerShown:false
+                }}
+                name="Screen4" component={Screen4} />
+                <Stack.Screen name="Screen5" component={Screen5} />
+            </Stack.Navigator>
+            
         </View>
     )
 }
