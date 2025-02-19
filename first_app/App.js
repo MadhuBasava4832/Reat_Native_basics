@@ -13,6 +13,7 @@ import StackTopBar from './Navigations/stack_topbarnav';
 import Bottombar from './Navigations/Bottombar/bottomtab';
 import DrawerNav from './Navigations/drawernav';
 import ImageAcesses from './storageAcesses/imageAcesses';
+import SharingImage from './storageAcesses/sharing';
 
 
 
@@ -98,7 +99,8 @@ export default function App() {
       {/* <Bottombar/> */}
       {/* <DrawerNav/> */}
 
-      <ImageAcesses/>
+      {/* <ImageAcesses/> */}
+      <SharingImage/>
 
     </View>
    );
