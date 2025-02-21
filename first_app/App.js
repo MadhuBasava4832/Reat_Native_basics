@@ -14,6 +14,7 @@ import Bottombar from './Navigations/Bottombar/bottomtab';
 import DrawerNav from './Navigations/drawernav';
 import ImageAcesses from './storageAcesses/imageAcesses';
 import SharingImage from './storageAcesses/sharing';
+import CameraAccesses from './storageAcesses/cameraAcesses';
 
 
 
@@ -100,7 +101,11 @@ export default function App() {
       {/* <DrawerNav/> */}
 
       {/* <ImageAcesses/> */}
-      <SharingImage/>
+      {/* <SharingImage/> */}
+      <CameraAccesses/>
+
+
+
 
     </View>
    );

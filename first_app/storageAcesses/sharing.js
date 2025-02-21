@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, ScrollView, Share } from "react-native";
 import { Button } from "react-native-paper";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as ImagePicker from "expo-image-picker";
 import * as Sharing from "expo-sharing";
 import * as FileSystem from "expo-file-system";
@@ -14,21 +14,15 @@ const SharingImage = () => {
 
     const Imagefun = async () => {
         const { status } = await ImagePicker.getMediaLibraryPermissionsAsync();
-        console.log(status);
         if (status === "granted") {
             const result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.Images,
                 allowsEditing: true
             });
-            console.log(ImagePicker);
-            console.log(result.assets[0].uri);
             setMyimage(result.assets[0].uri);
-
-
         } else {
             alert("Give permissions");
         }
-
     }
 
     const Sharefun = async () => {
@@ -47,6 +41,53 @@ const SharingImage = () => {
             Sharing.shareAsync(uri)
         }else{alert("give permission for sharing")}
     }
+    // const DowShare = async() => {
+    //     const ImageURL = text;
+    //     const FileURL = `${FileSystem.cacheDirectory}/downloaded.png`;
+    //     const {uri} = await FileSystem.downloadAsync(ImageURL,FileURL);
+    //     const status = await Sharing.isAvailableAsync();
+    //     if (status){
+    //         Sharing.shareAsync(uri)
+    //         console.log(uri);
+            
+    //     }else{alert("give permission for sharing")}
+    // }
+
+
+
+    const DowShare = async () => {
+        try {
+            // Ensure text is not empty or undefined
+            if (!text) {
+                alert("No image URL provided!");
+                return;
+            }
+    
+            const ImageURL = text;
+            const FileURL = `${FileSystem.cacheDirectory}/downloaded.png`;
+    
+            // Check if sharing is available before downloading
+            const isSharingAvailable = await Sharing.isAvailableAsync();
+            if (!isSharingAvailable) {
+                alert("Give permission for sharing");
+                return;
+            }
+    
+            // Download the image
+            const { uri } = await FileSystem.downloadAsync(ImageURL, FileURL);
+    
+            // Share the file
+            await Sharing.shareAsync(uri);
+            console.log("Shared URI:", uri);
+        } catch (error) {
+            console.error("Error in Download and Share:", error);
+            alert("Something went wrong while sharing.");
+        }
+    };
+
+    
+
+
 
     return (
         <SafeAreaView>
@@ -54,18 +95,18 @@ const SharingImage = () => {
 
 
             <View style={{ display:'flex',flexDirection:'row'}} >
+                <View style={{borderWidth:1,width:"50%",height:40}} >
+
                 <TextInput 
-                style={{borderWidth:1,width:250,height:60}}
+                style={{borderWidth:1}}
                 placeholder="Enter url here ... "
                 onChangeText={(text) => {
                     settext(text)
-                    console.log(text);
                 }}
                 value={text}
                 />
-                <Button mode="contained" onPress={(text) => {
-                    setMyimage(text)
-                }} >download</Button>
+                </View>
+                <Button mode="contained" onPress={DowShare} >download & share</Button>
             </View>
 
 
@@ -88,7 +129,6 @@ const SharingImage = () => {
             <Button mode="contained"  onPress={Sharefun1} >share from chrome</Button>
         </ScrollView>
         </SafeAreaView>
-
     )
 }
 
